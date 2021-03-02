@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Table from "./Table/Table"
+import API from "./utils/API"
+import React from "react"
 
 function App() {
+  const [users,setUsers]=React.useState([{name:{first: "Sarah"}}])
+  React.useEffect(() => {
+    getUsers()
+  },[])
+  const getUsers = () => {
+    API.getUsers().then((userObj) => {
+      console.log(userObj);
+      setUsers(userObj.data.results)
+
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Table users={ users }/>
     </div>
   );
 }
