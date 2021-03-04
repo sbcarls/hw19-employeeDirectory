@@ -14,7 +14,7 @@ export default function Table(props) {
                 </tr>
                 {props.users.map((user) => (
                 <tr>
-                    <td><img src={user.picture.thumbnail}></img></td>
+                    {/* <td><img src={user.picture.thumbnail}></img></td> */}
                     <td>{user.name.first}</td>
                     <td>{user.dob.age}</td>
                     <td>{user.phone}</td>
