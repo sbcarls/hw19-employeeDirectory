@@ -4,7 +4,7 @@ import API from "./utils/API"
 import React from "react"
 
 function App() {
-  const [users,setUsers]=React.useState([{name:{first: "Sarah"}}])
+  const [users,setUsers]=React.useState([])
   React.useEffect(() => {
     getUsers()
   },[])

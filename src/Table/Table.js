@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function Table(props) {
-    console.log(props.users[0].name.first);
+    // console.log(props.users[0].name.first);
     return (
         <div>
             <table>
@@ -14,7 +14,7 @@ export default function Table(props) {
                 </tr>
                 {props.users.map((user) => (
                 <tr>
-                    {/* <td><img src={user.picture.thumbnail}></img></td> */}
+                    <td><img src={user.picture.thumbnail}></img></td>
                     <td>{user.name.first}</td>
                     <td>{user.dob.age}</td>
                     <td>{user.phone}</td>
